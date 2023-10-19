@@ -1,0 +1,76 @@
+game = rootService.currentGame
+currentPlayer = game.getCurrentPlayer
+player2 = game.getOtherPlayer
+
+currentPlayer.pass
+
+IF currentPlayer.hasPassed THEN
+    IF player2.hasPassed THEN
+        game.end
+    ELSE
+       game.changePlayer
+    END IF
+ELSE
+    game.changePlayer
+END IF
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ SPIELER ENTSCHEIDET_ZU_PASSEN
+    
+    IF SPIELER hat gepasst THEN
+        ÜBERPRÜFEN, ob der andere SPIELER gepasst hat
+        
+        IF der andere SPIELER hat auch gepasst THEN
+            SPIEL BEENDET
+        ELSE
+            GEHE ZU: NÄCHSTER SPIELER IST AM ZUG
+        END IF
+    ELSE
+        GEHE ZU: NÄCHSTER SPIELER IST AM ZUG
+    END IF
+    
+NÄCHSTER SPIELER IST AM ZUG:
+    SPIELER wechselt
+    GEHE ZU: SPIEL_START
+
+//-----------------------------------
+
+
+game = rootService.currentGame
+
+game.player1.pass
+
+IF game.player1.hasPassed THEN
+    IF game.player2.hasPassed THEN
+        game.end
+    ELSE
+       game.changePlayer
+    END IF
+ELSE
+    game.changePlayer
+END IF
+
+//-------------------------------------
+
+
+game = rootService.currentGame
+currentPlayer = game.getCurrentPlayer
+player2 = game.getOtherPlayer
+
+currentPlayer.pass
+
+IF currentPlayer.hasPassed THEN
+    IF player2.hasPassed THEN
+        game.end
+    ELSE
+       game.changePlayer
+    END IF
+ELSE
+    game.changePlayer
+END IF

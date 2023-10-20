@@ -55,22 +55,3 @@ IF game.player1.hasPassed THEN
 ELSE
     game.changePlayer
 END IF
-
-//-------------------------------------
-
-
-game = rootService.currentGame
-currentPlayer = game.getCurrentPlayer
-player2 = game.getOtherPlayer
-
-currentPlayer.pass
-
-IF currentPlayer.hasPassed THEN
-    IF player2.hasPassed THEN
-        game.end
-    ELSE
-       game.changePlayer
-    END IF
-ELSE
-    game.changePlayer
-END IF
